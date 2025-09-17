@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Website</title>
+    <!-- Added Google Fonts import for better typography matching the design -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&family=Inter:wght@400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        /* Updated font family to Inter for modern, clean look matching the design */
+        font-family: "Poppins", "Inter", sans-serif;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* Navigation */
+      .navbar {
+        /* Updated to exact coral color from the design */
+        background-color: #ff7a7a;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        /* Updated text color to match design exactly */
+        color: #2d2d2d;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: #fff;
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 4px;
+      }
+
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        /* Updated hamburger color to match text */
+        background-color: #2d2d2d;
+        transition: 0.3s;
+      }
+
+      /* Hero Section */
+      .hero-section {
+        /* Updated to exact cream/beige gradient from design */
+        background: #f7f3e9;
+        min-height: 100vh;
+        padding: 4rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero-container {
+        max-width: 1200px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .image-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        height: 500px;
+      }
+
+      .image-item {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .image-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .image-item:hover img {
+        transform: scale(1.05);
+      }
+
+      .image-item:first-child {
+        grid-row: span 1;
+      }
+
+      .image-item:nth-child(2) {
+        grid-row: span 2;
+      }
+
+      .image-item:last-child {
+        grid-row: span 1;
+      }
+
+      .cta-box {
+        /* Updated to exact coral color matching navigation */
+        background-color: #ff7a7a;
+        padding: 3rem;
+        border-radius: 12px;
+        box-shadow: 0 8px 25px rgba(255, 122, 122, 0.3);
+      }
+
+      .cta-small-text {
+        /* Updated text color for better contrast */
+        color: #2d2d2d;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+
+      .cta-title {
+        /* Updated text color and font weight */
+        color: #2d2d2d;
+        font-size: 3rem;
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 2rem;
+        letter-spacing: -1px;
+      }
+
+      .cta-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        /* Updated button text color */
+        color: #2d2d2d;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-decoration: none;
+        transition: transform 0.3s ease;
+      }
+
+      .cta-button:hover {
+        transform: translateX(5px);
+      }
+
+      .arrow {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+
+      /* Content Section */
+      .content-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 100vh;
+        background: #ffb3ba;
+      }
+
+      .content-left {
+        /* Updated to exact pink/salmon gradient from design */
+        /* Removed padding to allow content to span full width of left section */
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* Added padding to inner content instead of container */
+        padding-left: 4rem;
+        padding-right: 4rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+
+      .content-title {
+        /* Updated text color and font weight */
+        color: #2d2d2d;
+        font-size: 3.5rem;
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 2rem;
+        letter-spacing: -2px;
+      }
+
+      .content-text {
+        /* Updated text color for consistency */
+        color: #2d2d2d;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 3rem;
+        max-width: 500px;
+        font-weight: 400;
+      }
+
+      .content-button {
+        /* Updated button colors to match design */
+        background-color: #ff7a7a;
+        color: #2d2d2d;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 6px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        align-self: flex-start;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .content-button:hover {
+        background-color: #ff6b6b;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(255, 122, 122, 0.4);
+      }
+
+      .content-right {
+        background-color: #f8f8f8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* padding: 2rem;s */
+      }
+
+      .content-image {
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        object-fit: cover;
+        /* border-radius: 12px; */
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1024px) {
+        .hero-container {
+          gap: 2rem;
+        }
+
+        .cta-title {
+          font-size: 2.5rem;
+        }
+
+        .content-title {
+          font-size: 3rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+
+        .hero-container {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+          text-align: center;
+        }
+
+        .image-grid {
+          height: 400px;
+          order: 2;
+        }
+
+        .cta-box {
+          order: 1;
+          padding: 2rem;
+        }
+
+        .cta-title {
+          font-size: 2rem;
+        }
+
+        .content-section {
+          grid-template-columns: 1fr;
+        }
+
+        .content-left {
+          padding: 3rem 2rem;
+          text-align: center;
+        }
+
+        .content-title {
+          font-size: 2.5rem;
+        }
+
+        .content-button {
+          align-self: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .navbar {
+          padding: 1rem;
+        }
+
+        .hero-section {
+          padding: 2rem 1rem;
+        }
+
+        .cta-box {
+          padding: 1.5rem;
+        }
+
+        .cta-title {
+          font-size: 1.8rem;
+        }
+
+        .content-left {
+          padding: 2rem 1rem;
+        }
+
+        .content-title {
+          font-size: 2rem;
+        }
+
+        .content-text {
+          font-size: 1rem;
+        }
+
+        .image-grid {
+          height: 300px;
+          gap: 0.5rem;
+        }
+      }
+
+      /* Zoom and Scale Protection */
+      @media (min-width: 1400px) {
+        .hero-container,
+        .content-left {
+          max-width: 1400px;
+          margin: 0 auto;
+        }
+      }
+
+      /* Text Overflow Protection */
+      .cta-title,
+      .content-title {
+        word-wrap: break-word;
+        hyphens: auto;
+      }
+
+      .content-text {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#order">Order</a></li>
+        <li><a href="#food">Food</a></li>
+        <li><a href="#restaurant">Restaurant</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+    <!-- Content Section -->
+    <section class="content-section">
+      <div class="content-left">
+        <h2 class="content-title">LOREM IPSUM</h2>
+        <p class="content-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id
+          est vitae dolor rhoncus tristique. Maecenas metus quam, rhoncus
+          euismod lorem in, sollicitudin viverra eros. Donec dictum luctus quam
+          ut tristique. Curabitur nec faucibus purus. Quisque congue sem nec
+          justo mollis, in tincidunt erat pretium. Sed pulvinar, massa ac porta
+          viverra.
+        </p>
+        <button class="content-button">Click Me</button>
+      </div>
+      <div class="content-right">
+        <img
+          src="./images/pexels-robin-stickel-70497.jpg"
+          alt="Delicious gourmet burger with golden fries"
+          class="content-image"
+        />
+      </div>
+    </section>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-container">
+        <div class="image-grid">
+          <div class="image-item">
+            <img
+              src="./images/pexels-rachel-claire-6752433.jpg"
+              alt="Restaurant exterior with neon signage"
+            />
+          </div>
+          <div class="image-item">
+            <img
+              src="./images/pexels-mister-mister-3434523.jpg"
+              alt="Gourmet food presentation"
+            />
+          </div>
+          <div class="image-item">
+            <img
+              src="./images/pexels-eva-bronzini-6141651.jpg"
+              alt="Restaurant interior dining area"
+            />
+          </div>
+        </div>
+        <div class="cta-box">
+          <div class="cta-small-text">LOREM IPSUM</div>
+          <h1 class="cta-title">LOREM IPSUM SET ADEMIR</h1>
+          <a href="#" class="cta-button">
+            Click <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
