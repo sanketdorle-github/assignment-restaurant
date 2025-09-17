@@ -21,6 +21,7 @@
         font-family: "Poppins", "Inter", sans-serif;
         line-height: 1.6;
         overflow-x: hidden;
+        background: linear-gradient(to right, #eae1e1, #ffb3ba);
       }
 
       /* Navigation */
@@ -40,6 +41,7 @@
         display: flex;
         list-style: none;
         gap: 2rem;
+        margin: 0 auto;
       }
 
       .nav-links a {
@@ -60,6 +62,7 @@
         flex-direction: column;
         cursor: pointer;
         gap: 4px;
+        margin-left: auto;
       }
 
       .hamburger span {
@@ -69,11 +72,28 @@
         background-color: #2d2d2d;
         transition: 0.3s;
       }
+      .hamburger {
+        display: none; /* hidden on desktop */
+        cursor: pointer;
+      }
+
+      .hamburger img {
+        width: 28px; /* adjust size */
+        height: auto; /* keeps aspect ratio */
+        filter: brightness(0) saturate(100%) invert(15%) sepia(4%)
+          saturate(170%) hue-rotate(178deg) brightness(95%) contrast(90%);
+        /* optional: makes it adapt to dark text color (#2d2d2d) */
+        transition: transform 0.3s ease;
+      }
+
+      .hamburger img:hover {
+        transform: scale(1.1); /* subtle zoom on hover */
+      }
 
       /* Hero Section */
       .hero-section {
         /* Updated to exact cream/beige gradient from design */
-        background: #f7f3e9;
+        /* background: linear-gradient(to right, #eae1e1, #ffb3ba); */
         min-height: 100vh;
         padding: 4rem 2rem;
         display: flex;
@@ -136,21 +156,21 @@
 
       .cta-small-text {
         /* Updated text color for better contrast */
-        color: #2d2d2d;
+        color: #090909;
         font-size: 0.9rem;
         margin-bottom: 1rem;
-        font-weight: 600;
+        font-weight: 300;
         letter-spacing: 0.5px;
       }
 
       .cta-title {
         /* Updated text color and font weight */
-        color: #2d2d2d;
+        color: #090909;
         font-size: 3rem;
-        font-weight: 900;
+        font-weight: 700;
         line-height: 1.1;
         margin-bottom: 2rem;
-        letter-spacing: -1px;
+        letter-spacing: 2px;
       }
 
       .cta-button {
@@ -158,9 +178,9 @@
         align-items: center;
         gap: 0.5rem;
         /* Updated button text color */
-        color: #2d2d2d;
+        color: #080808;
         font-size: 1.1rem;
-        font-weight: 700;
+        font-weight: 300;
         text-decoration: none;
         transition: transform 0.3s ease;
       }
@@ -170,8 +190,11 @@
       }
 
       .arrow {
-        font-size: 1.2rem;
-        font-weight: bold;
+        font-size: 1.5rem; /* bigger size */
+        font-weight: bolder; /* extra bold */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
       }
 
       /* Content Section */
@@ -179,7 +202,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         min-height: 100vh;
-        background: #ffb3ba;
+        background: linear-gradient(to right, #eae1e1, #ffb3ba);
       }
 
       .content-left {
@@ -200,10 +223,10 @@
         /* Updated text color and font weight */
         color: #2d2d2d;
         font-size: 3.5rem;
-        font-weight: 900;
+        font-weight: 600;
         line-height: 1.1;
         margin-bottom: 2rem;
-        letter-spacing: -2px;
+        letter-spacing: 2px;
       }
 
       .content-text {
@@ -219,12 +242,12 @@
       .content-button {
         /* Updated button colors to match design */
         background-color: #ff7a7a;
-        color: #2d2d2d;
-        padding: 1rem 2rem;
+        color: #fff;
+        padding: 1rem 6rem;
         border: none;
-        border-radius: 6px;
+        /* border-radius: 6px; */
         font-size: 1.1rem;
-        font-weight: 700;
+        font-weight: 300;
         cursor: pointer;
         transition: all 0.3s ease;
         align-self: flex-start;
@@ -238,7 +261,7 @@
       }
 
       .content-right {
-        background-color: #f8f8f8;
+        /* background-color: #f8f8f8; */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -270,14 +293,13 @@
       }
 
       @media (max-width: 768px) {
-        .nav-links {
-          display: none;
-        }
-
         .hamburger {
-          display: flex;
+          display: block; /* show only on smaller screens */
         }
 
+        .nav-links {
+          display: none; /* hide links on mobile */
+        }
         .hero-container {
           grid-template-columns: 1fr;
           gap: 3rem;
@@ -385,9 +407,7 @@
         <li><a href="#contact">Contact Us</a></li>
       </ul>
       <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+        <img src="./images/menu-bar.png" alt="hamburger" />
       </div>
     </nav>
     <!-- Content Section -->
@@ -439,7 +459,12 @@
           <div class="cta-small-text">LOREM IPSUM</div>
           <h1 class="cta-title">LOREM IPSUM SET ADEMIR</h1>
           <a href="#" class="cta-button">
-            Click <span class="arrow">→</span>
+            Click
+            <span class="arrow">
+              <img
+                src="./images/icons8-arrow-30.png"
+                alt="Restaurant interior dining area"
+            /></span>
           </a>
         </div>
       </div>
