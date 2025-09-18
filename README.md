@@ -1,4 +1,7 @@
 📌 Frontend Responsive Webpage Assignment
+🔗 **Live Demo / Deployment Link:** [Click here to view](https://fancy-fudge-d2411b.netlify.app/)
+
+---
 
 This project is a responsive webpage built using HTML and CSS.
 The main objective of this assignment was to create a webpage that matches a given design while ensuring responsiveness across desktop, tablet, and mobile devices, and maintaining proper behavior during zooming and resizing.
@@ -49,7 +52,7 @@ CSS3 → Styling, layout, and responsiveness (Flexbox & Media Queries)
 ![Desktop Screenshot](./images/screenshots/s1.png)
 ![Desktop Screenshot](./images/screenshots/s2.png)
 
-### Mobile View (Menu Closed)
+### Mobile View
 
 ![Mobile Closed](./images/screenshots/Mobile/s1.jpg)
 ![Mobile Closed](./images/screenshots/Mobile/s2.jpg)
