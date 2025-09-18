@@ -46,14 +46,14 @@ CSS3 → Styling, layout, and responsiveness (Flexbox & Media Queries)
 
 ### Desktop View
 
-![Desktop Screenshot](./screenshots/s1.png)
-![Desktop Screenshot](./screenshots/s2.png)
+![Desktop Screenshot](./images/screenshots/s1.png)
+![Desktop Screenshot](./images/screenshots/s2.png)
 
 ### Mobile View (Menu Closed)
 
-![Mobile Closed](./screenshots/Mobile/s1.png)
-![Mobile Closed](./screenshots/Mobile/s2.png)
-![Mobile Closed](./screenshots/Mobile/s3.png)
+![Mobile Closed](./images/screenshots/Mobile/s1.png)
+![Mobile Closed](./images/screenshots/Mobile/s2.png)
+![Mobile Closed](./images/screenshots/Mobile/s3.png)
 
 ---
 
