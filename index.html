@@ -4,12 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Restaurant Website</title>
-    <!-- Added Google Fonts import for better typography matching the design -->
+    
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&family=Inter:wght@400;500;600;700;900&display=swap"
       rel="stylesheet"
     />
-    <style>
+    <link rel="stylesheet" href="style.css" />
+    <script src="./script.js"></script>
+  
       * {
         margin: 0;
         padding: 0;
@@ -298,7 +300,20 @@
         }
 
         .nav-links {
-          display: none; /* hide links on mobile */
+          display: none;
+          flex-direction: column;
+          gap: 1rem;
+          position: absolute;
+          top: 60px; /* adjust below navbar */
+          left: 0;
+          width: 100%;
+          background: #e58888; /* dropdown background */
+          padding: 1rem 0;
+          text-align: center;
+        }
+
+        .nav-links.active {
+          display: flex; /* show when active */
         }
         .hero-container {
           grid-template-columns: 1fr;
@@ -393,10 +408,10 @@
         word-wrap: break-word;
         overflow-wrap: break-word;
       }
-    </style>
+    </style> -->
   </head>
   <body>
-    <!-- Navigation -->
+  
     <nav class="navbar">
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
@@ -469,5 +484,6 @@
         </div>
       </div>
     </section>
+ 
   </body>
 </html>
