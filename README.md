@@ -26,12 +26,16 @@ HTML5 → Page structure
 
 CSS3 → Styling, layout, and responsiveness (Flexbox & Media Queries)
 
+```
+
 📂 Project Structure
 .
 ├── index.html # Main HTML file
 ├── style.css # CSS styles
 ├── images/ # Project images (used in design)
 └── screenshots/ # Screenshots for demo (desktop, tablet, mobile)
+
+```
 
 ---
 
