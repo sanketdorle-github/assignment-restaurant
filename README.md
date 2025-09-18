@@ -51,9 +51,9 @@ CSS3 → Styling, layout, and responsiveness (Flexbox & Media Queries)
 
 ### Mobile View (Menu Closed)
 
-![Mobile Closed](./images/screenshots/Mobile/s1.png)
-![Mobile Closed](./images/screenshots/Mobile/s2.png)
-![Mobile Closed](./images/screenshots/Mobile/s3.png)
+![Mobile Closed](./images/screenshots/Mobile/s1.jpg)
+![Mobile Closed](./images/screenshots/Mobile/s2.jpg)
+![Mobile Closed](./images/screenshots/Mobile/s3.jpg)
 
 ---
 
